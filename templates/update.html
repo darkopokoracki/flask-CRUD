@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <h3>Update Page</h3>
+
+    <form action="/update/{{ user[0] }}" method="POST">
+        <p>
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" id="firstname" value="{{ user[1] }}">
+        </p>
+
+        <p>
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" id="lastname" value="{{ user[2] }}">
+        </p>
+
+        <p>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" value="{{ user[3] }}">
+        </p>
+
+        <p>
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" value="{{ user[4] }}">
+        </p>
+
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="{{ user[5] }}">
+        </p>
+
+        <p>
+            <input type="submit" value="Save Changes">
+        </p>
+    </form>
+</body>
+</html>

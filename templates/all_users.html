@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+</head>
+<body>
+    <h1>All Users Page</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th colspan="2">Edit</th>
+        </tr>
+
+        {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[3] }}</td>
+                <td>{{ user[4] }}</td>
+                <td>{{ user[5] }}</td>
+                <td>
+                    <form action="/delete/{{ user[0] }}" method="POST">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+
+                <td>
+                    <a href="/update/{{ user[0] }}">
+                        Update
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
